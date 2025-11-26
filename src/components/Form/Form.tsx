@@ -2,7 +2,14 @@ export default function Title() {
 
   return (
     <>
-      <input type="text" placeholder="Dawn of the Squid" />
+      <label htmlFor="artist-name">
+        Artist Name
+      </label>      
+      <input 
+        type="text" 
+        placeholder="Dawn of the Squid" 
+        id="artist-name" 
+      />
     </>
   );
 }

@@ -7,3 +7,8 @@ test("Displays placeholder text 'Dawn of the Squid'", async () => {
   render(<Form />);
   expect(screen.getByPlaceholderText('Dawn of the Squid')).toBeInTheDocument();
 });
+
+test("Displays 'Artist Name' form field label", async() => {
+  render(<Form />);
+  expect(screen.getByLabelText('Artist Name')).toBeInTheDocument();
+});
