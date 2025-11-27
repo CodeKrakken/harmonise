@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import Title from "./Title";
 import "@testing-library/jest-dom";
 
-test("Displays the title 'Harmonise'", async () => {
+test("Displays the title 'Harmonise'", () => {
   render(<Title />);
   expect(screen.getByText('Harmonise')).toBeInTheDocument();
 });

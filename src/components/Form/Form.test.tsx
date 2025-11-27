@@ -9,12 +9,12 @@ jest.mock("../../functions/handleSubmit", () => ({
 }));
 
 
-test("Displays placeholder text 'Dawn of the Squid'", async () => {
+test("Displays placeholder text 'Dawn of the Squid'", () => {
   render(<Form />);
   expect(screen.getByPlaceholderText('Dawn of the Squid')).toBeInTheDocument();
 });
 
-test("Displays 'Artist Name' form field label", async() => {
+test("Displays 'Artist Name' form field label", () => {
   render(<Form />);
   expect(screen.getByLabelText('Artist Name')).toBeInTheDocument();
 });
@@ -29,7 +29,7 @@ test("Accepts user input", async () => {
   expect(artistNameField).toHaveValue("Music Research Unit");
 });
 
-test ('Has a Submit button', async() => {
+test ('Has a Submit button', () => {
   render (<Form />);
 
   const button = screen.getByRole('button', { name: 'Submit' });
@@ -37,7 +37,7 @@ test ('Has a Submit button', async() => {
   expect(button).toBeInTheDocument();
 })
 
-test("Submits user input", async () => {
+test("Runs handleSubmit when Submit button pressed", async () => {
 
   render(<Form />);
   const artistNameField = screen.getByLabelText("Artist Name");
