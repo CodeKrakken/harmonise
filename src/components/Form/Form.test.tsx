@@ -23,6 +23,14 @@ test("Accepts user input", async () => {
   expect(artistNameField).toHaveValue("Music Research Unit");
 });
 
+test ('Has a Submit button', async() => {
+  render (<Form />);
+
+  const button = screen.getByRole('button', { name: 'Submit' });
+
+  expect(button).toBeInTheDocument();
+})
+
 // test("Submits user input", async () => {
 
 //   render(<Form />);
