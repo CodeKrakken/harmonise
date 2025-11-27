@@ -1,6 +1,6 @@
-import { form_test_placeholder } from "./components/Form/Form.test";
-import { title_test_title } from "./components/Title/Title.test";
 import "@testing-library/jest-dom";
+import { form_test_placeholder } from "./components/Form/Form.testFunctions";
+import { title_test_title } from "./components/Title/Title.testFunctions";
 
 test("Displays the title 'Harmonise'", title_test_title);
 
