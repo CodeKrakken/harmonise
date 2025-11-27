@@ -12,6 +12,7 @@ test("Displays 'Artist Name' form field label", async() => {
   render(<Form />);
   expect(screen.getByLabelText('Artist Name')).toBeInTheDocument();
 });
+<<<<<<< HEAD
 
 test("Accepts user input", async () => {
   render(<Form />);
@@ -36,3 +37,5 @@ test("Accepts user input", async () => {
 //     artistName: "Music Research Unit"
 //   });
 // });
+=======
+>>>>>>> 0a6a86fda6e67db07b437b1a1cb2fd83de07d599

@@ -8,6 +8,7 @@ export default function Title() {
     <>
       <label htmlFor="artist-name">
         Artist Name
+<<<<<<< HEAD
       </label>
 
       <form>
@@ -23,6 +24,14 @@ export default function Title() {
 
       </form>      
       
+=======
+      </label>      
+      <input 
+        type="text" 
+        placeholder="Dawn of the Squid" 
+        id="artist-name" 
+      />
+>>>>>>> 0a6a86fda6e67db07b437b1a1cb2fd83de07d599
     </>
   );
 }
