@@ -1,2 +1,2 @@
-export function handleSubmit() {
+export function handleSubmit(formData: {}) {
 }

@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { handleSubmit } from "../../functions/handleSubmit"
 
 export default function Form() {
+
+  const [artistName, setArtistName] = useState("");
 
   return (
     <>
@@ -12,11 +15,14 @@ export default function Form() {
           type="text" 
           placeholder="Dawn of the Squid" 
           id="artist-name" 
+          onChange={e => setArtistName(e.target.value)}
         />
         <button 
           type="button"
-          onClick={handleSubmit}
-        >Submit</button>
+          onClick={() => handleSubmit({artistName})}
+        >
+          Submit
+        </button>
       </form>
       
     </>

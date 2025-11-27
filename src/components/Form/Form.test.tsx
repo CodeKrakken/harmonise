@@ -40,10 +40,21 @@ test ('Has a Submit button', () => {
 test("Runs handleSubmit when Submit button pressed", async () => {
 
   render(<Form />);
-  const artistNameField = screen.getByLabelText("Artist Name");
   const button = screen.getByRole("button", { name: /submit/i });
 
   await userEvent.click(button);
 
   expect(handleSubmit).toHaveBeenCalled();
+});
+
+test("Calls handleSubmit with input data", async () => {
+
+  render(<Form />);
+  const artistNameField = screen.getByLabelText("Artist Name");
+  const button = screen.getByRole("button", { name: /submit/i });
+
+  await userEvent.type(artistNameField, 'Music Research Unit')
+  await userEvent.click(button);
+
+  expect(handleSubmit).toHaveBeenCalledWith({ artistName: 'Music Research Unit'});
 });
