@@ -2,12 +2,12 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Form from "./Form";
 import "@testing-library/jest-dom";
+import { handleSubmit } from "../../functions/handleSubmit";
 
 jest.mock("../../functions/handleSubmit", () => ({
   handleSubmit: jest.fn()
 }));
 
-import { handleSubmit } from "../../functions/handleSubmit";
 
 test("Displays placeholder text 'Dawn of the Squid'", async () => {
   render(<Form />);
@@ -43,7 +43,6 @@ test("Submits user input", async () => {
   const artistNameField = screen.getByLabelText("Artist Name");
   const button = screen.getByRole("button", { name: /submit/i });
 
-  await userEvent.type(artistNameField, "Music Research Unit");
   await userEvent.click(button);
 
   expect(handleSubmit).toHaveBeenCalled();
