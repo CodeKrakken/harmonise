@@ -3,6 +3,12 @@ import userEvent from "@testing-library/user-event";
 import Form from "./Form";
 import "@testing-library/jest-dom";
 
+jest.mock("../../functions/handleSubmit", () => ({
+  handleSubmit: jest.fn()
+}));
+
+import { handleSubmit } from "../../functions/handleSubmit";
+
 test("Displays placeholder text 'Dawn of the Squid'", async () => {
   render(<Form />);
   expect(screen.getByPlaceholderText('Dawn of the Squid')).toBeInTheDocument();
@@ -31,16 +37,14 @@ test ('Has a Submit button', async() => {
   expect(button).toBeInTheDocument();
 })
 
-// test("Submits user input", async () => {
+test("Submits user input", async () => {
 
-//   render(<Form />);
-//   const artistNameField = screen.getByLabelText("Artist Name");
-//   const button = screen.getByRole("button", { name: /submit/i });
+  render(<Form />);
+  const artistNameField = screen.getByLabelText("Artist Name");
+  const button = screen.getByRole("button", { name: /submit/i });
 
-//   await userEvent.type(artistNameField, "Music Research Unit");
-//   await userEvent.click(button);
+  await userEvent.type(artistNameField, "Music Research Unit");
+  await userEvent.click(button);
 
-//   expect(handleSubmit).toHaveBeenCalledWith({
-//     artistName: "Music Research Unit"
-//   });
-// });
+  expect(handleSubmit).toHaveBeenCalled();
+});

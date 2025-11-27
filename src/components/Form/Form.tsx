@@ -1,4 +1,6 @@
-export default function Title() {
+import { handleSubmit } from "../../functions/handleSubmit"
+
+export default function Form() {
 
   return (
     <>
@@ -11,7 +13,10 @@ export default function Title() {
           placeholder="Dawn of the Squid" 
           id="artist-name" 
         />
-        <button type="button">Submit</button>
+        <button 
+          type="button"
+          onClick={handleSubmit}
+        >Submit</button>
       </form>
       
     </>
