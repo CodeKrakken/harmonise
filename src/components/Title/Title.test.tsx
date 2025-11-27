@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import Title from "./Title";
 import "@testing-library/jest-dom";
 
-test("increments the count on click", async () => {
+test("Displays the title 'Harmonise'", async () => {
   render(<Title />);
   expect(screen.getByText('Harmonise')).toBeInTheDocument();
 });
