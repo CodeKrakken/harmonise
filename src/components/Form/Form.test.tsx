@@ -5,36 +5,39 @@ import "@testing-library/jest-dom";
 import { handleSubmit } from "../../functions/handleSubmit";
 
 jest.mock("../../functions/handleSubmit", () => ({
+
   handleSubmit: jest.fn()
+
 }));
 
-test("Displays placeholder text 'Dawn of the Squid'", () => {
+test("Displays field with placeholder text 'Dawn of the Squid'", () => {
+
   render(<Form />);
-  expect(screen.getByPlaceholderText('Dawn of the Squid')).toBeInTheDocument();
+  const text = screen.getByPlaceholderText('Dawn of the Squid')
+  
+  expect(text).toBeInTheDocument();
+
 });
 
-test("Displays 'Artist Name' form field label", () => {
+test("Displays 'Artist Name' field label", () => {
+
   render(<Form />);
-  expect(screen.getByLabelText('Artist Name')).toBeInTheDocument();
+  const text = screen.getByLabelText('Artist Name')
+
+  expect(text).toBeInTheDocument();
+
 });
 
 test("Accepts user input", async () => {
-  render(<Form />);
 
+  render(<Form />);
   const artistNameField = screen.getByLabelText("Artist Name");
 
   await userEvent.type(artistNameField, "Music Research Unit");
 
   expect(artistNameField).toHaveValue("Music Research Unit");
+
 });
-
-test ('Has a Submit button', () => {
-  render (<Form />);
-
-  const button = screen.getByRole('button', { name: 'Submit' });
-
-  expect(button).toBeInTheDocument();
-})
 
 test("Calls handleSubmit with input data", async () => {
 
@@ -46,4 +49,5 @@ test("Calls handleSubmit with input data", async () => {
   await userEvent.click(button);
 
   expect(handleSubmit).toHaveBeenCalledWith({ artistName: 'Music Research Unit'});
+  
 });

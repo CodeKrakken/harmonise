@@ -1,10 +1,12 @@
-import { useState } from "react";
-
 export default function Title() {
 
+  const title = 'Harmonise'
+
   return (
-    <div>
-      Harmonise
-    </div>
+
+    <>
+      {title}
+    </>
+
   );
 }
