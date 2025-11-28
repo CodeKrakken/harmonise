@@ -8,7 +8,6 @@ jest.mock("../../functions/handleSubmit", () => ({
   handleSubmit: jest.fn()
 }));
 
-
 test("Displays placeholder text 'Dawn of the Squid'", () => {
   render(<Form />);
   expect(screen.getByPlaceholderText('Dawn of the Squid')).toBeInTheDocument();
@@ -36,16 +35,6 @@ test ('Has a Submit button', () => {
 
   expect(button).toBeInTheDocument();
 })
-
-test("Runs handleSubmit when Submit button pressed", async () => {
-
-  render(<Form />);
-  const button = screen.getByRole("button", { name: /submit/i });
-
-  await userEvent.click(button);
-
-  expect(handleSubmit).toHaveBeenCalled();
-});
 
 test("Calls handleSubmit with input data", async () => {
 
