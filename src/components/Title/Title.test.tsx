@@ -1,9 +1,4 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import Title from "./Title";
 import "@testing-library/jest-dom";
+import { title_test_title } from "./Title.testFunctions";
 
-test("Displays the title 'Harmonise'", async () => {
-  render(<Title />);
-  expect(screen.getByText('Harmonise')).toBeInTheDocument();
-});
+test("Displays the title 'Harmonise'", title_test_title);

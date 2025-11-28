@@ -1,9 +1,4 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import Form from "./Form";
 import "@testing-library/jest-dom";
+import { form_test_placeholder } from "./Form.testFunctions";
 
-test("Displays placeholder text 'Dawn of the Squid'", async () => {
-  render(<Form />);
-  expect(screen.getByPlaceholderText('Dawn of the Squid')).toBeInTheDocument();
-});
+test("Displays placeholder text 'Dawn of the Squid'", form_test_placeholder);
