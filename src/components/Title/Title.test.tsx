@@ -1,12 +1,4 @@
-import { render, screen } from "@testing-library/react";
-import Title from "./Title";
 import "@testing-library/jest-dom";
+import { title_test_title } from "./Title.testFunctions";
 
-test("Displays the title 'Harmonise'", () => {
-
-  render(<Title />);
-  const text = screen.getByText('Harmonise')
-  
-  expect(text).toBeInTheDocument();
-
-});
+test("Displays the title 'Harmonise'", title_test_title);
