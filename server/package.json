@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "echo \"Woulda built but didn't\" && exit 0",
-    "start": "echo \"Woulda started but didn't\" && exit 0",
+    "run": "echo \"Woulda run but didn't\" && exit 0",
     "test": "echo \"Error: no test specified\" && exit 0",
     "eject": "echo \"Woulda ejected but didn't\" && exit 0"
   },
