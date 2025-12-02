@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "pushd ./server && npm run start && popd && cd ./client && npm run start",
-    "build": "pushd ./server && npm run build && popd && cd ./client && npm run build",
-    "test": "pushd ./server && npm run test && popd && cd ./client && npm run test",
-    "eject": "pushd ./server && npm run eject && popd && cd ./client && npm run eject"
+    "build": "cd server && npm run build && cd ../client && npm run build",
+    "start": "cd server && npm run start && cd ../client && npm run start",
+    "test": "cd server && npm run test && cd ../client && npm run test",
+    "eject": "cd server && npm run eject && cd ../client && npm run eject",
+    "install": "cd server && npm install && cd ../client && npm install"
   }
 }
