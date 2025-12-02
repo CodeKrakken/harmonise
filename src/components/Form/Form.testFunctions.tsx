@@ -10,7 +10,7 @@ jest.mock("../../functions/handleSubmit", () => ({
 }));
 
 
-export const form_test_placeholder: () => Promise<void> = async () => {
+export const form_test_placeholder = () => {
   
   render(<Form />);
   const text = screen.getByPlaceholderText('Dawn of the Squid')
