@@ -1,8 +1,17 @@
 import mongoose from 'mongoose';
 
-mongoose
-    .connect(process.env.MONGODB_URI, {})
-    .then(r => {});
+const AddressSchema = new mongoose.Schema({
+    unit_number: Number,
+    floor_number: Number,
+    building_name: String,
+    building_number: Number,
+    street: String,
+    street_secondary: String,
+    city: String,
+    state: String,
+    postal_code: String,
+    country: String
+})
 
 const ContactSchema = new mongoose.Schema({
     email: String,
@@ -30,9 +39,8 @@ const TicketSchema = new mongoose.Schema({
     performers: [{ type: mongoose.Schema.Types.Array, ref: 'Performer' }],
 });
 
-const Contact = mongoose.model('Contact', ContactSchema);
-const Performer = mongoose.model('Performer', PerformerSchema);
-const Venue = mongoose.model('Venue', VenueSchema);
-const Ticket = mongoose.model('Ticket', TicketSchema);
-
-module.exports = { Contact, Performer, Venue, Ticket };
+export const Address = mongoose.model('Address', AddressSchema);
+export const Contact = mongoose.model('Contact', ContactSchema);
+export const Performer = mongoose.model('Performer', PerformerSchema);
+export const Venue = mongoose.model('Venue', VenueSchema);
+export const Ticket = mongoose.model('Ticket', TicketSchema);
