@@ -1,14 +1,15 @@
-import express from "express";
-import mongoose from "mongoose";
+import express from 'express';
+import mongoose from 'mongoose';
+import 'jsonwebtoken';
 import 'dotenv/config';
 import { Venue } from './schemata'
-import { randomMessage } from "./logic/randomMessage";
+import { randomMessage } from './logic/randomMessage';
 
 const app = express();
 app.use(express.json());
 
 mongoose
-    .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/harmonise", {})
+    .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/harmonise', {})
     .then(r => {});
 
 app.get('/api/venues', async (req, res, next) => {
