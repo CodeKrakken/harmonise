@@ -10,8 +10,16 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.10.1",
     "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
   }
 }
