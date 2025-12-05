@@ -7,6 +7,25 @@
     "start": "cd server && npm run start && cd ../client && npm run start",
     "test": "cd server && npm run test && cd ../client && npm run test",
     "eject": "cd server && npm run eject && cd ../client && npm run eject",
-    "install": "cd server && npm install && cd ../client && npm install"
+    "install": "cd server && npm install && cd ../client && npm install",
+    "lint": "eslint .",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@swc/core": "^1.15.3",
+    "@swc/jest": "^0.2.39",
+    "@types/jest": "^30.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.48.1",
+    "@typescript-eslint/parser": "^8.48.1",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "prettier": "^3.7.4"
   }
 }
