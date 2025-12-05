@@ -15,6 +15,7 @@
     "lint:watch": "chokidar 'client/src/**/*.{ts,tsx,js,jsx}' 'server/**/*.{ts,js}' -c 'eslint --fix \"client/src/**/*.{ts,tsx,js,jsx}\" \"server/**/*.{ts,js}\"'",
   "format:watch": "chokidar 'client/src/**/*.{ts,tsx,js,jsx}' 'server/**/*.{ts,js,json,css,scss,md}' -c 'prettier --write \"client/src/**/*.{ts,tsx,js,jsx}\" \"server/**/*.{ts,js,json,css,scss,md}\"'"
 
+  
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
