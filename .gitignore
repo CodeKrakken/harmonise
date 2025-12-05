@@ -423,7 +423,7 @@ FodyWeavers.xsd
 
 # Package Lock
 /package-lock.json
+*/package-lock.json
 
 # Coverage report files
 /coverage
-/client/package-lock.json
