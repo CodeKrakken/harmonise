@@ -7,9 +7,14 @@
     "start": "cd server && npm run start && cd ../client && npm run start",
     "test": "cd server && npm run test && cd ../client && npm run test",
     "eject": "cd server && npm run eject && cd ../client && npm run eject",
-    "install": "cd server && npm install && cd ../client && npm install",
-    "lint": "eslint .",
-    "test:coverage": "jest --coverage"
+    "install": "cd server && npm install && cd ../client && npm install && cd .. && npm run format:watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint 'client/src/components/**/*.{ts,tsx,js,jsx}' 'server/**/*.{ts,js}'",
+    "lint:fix": "eslint --fix 'client/src/**/*.{ts,tsx,js,jsx}' 'server/**/*.{ts,js}'",
+    "format": "prettier --write 'client/src/**/*.{ts,tsx,js,jsx}' 'server/**/*.{ts,js,json,css,scss,md}'",
+    "lint:watch": "chokidar 'client/src/**/*.{ts,tsx,js,jsx}' 'server/**/*.{ts,js}' -c 'eslint --fix \"client/src/**/*.{ts,tsx,js,jsx}\" \"server/**/*.{ts,js}\"'",
+  "format:watch": "chokidar 'client/src/**/*.{ts,tsx,js,jsx}' 'server/**/*.{ts,js,json,css,scss,md}' -c 'prettier --write \"client/src/**/*.{ts,tsx,js,jsx}\" \"server/**/*.{ts,js,json,css,scss,md}\"'"
+
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -18,6 +23,7 @@
     "@types/jest": "^30.0.0",
     "@typescript-eslint/eslint-plugin": "^8.48.1",
     "@typescript-eslint/parser": "^8.48.1",
+    "chokidar-cli": "^3.0.0",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
