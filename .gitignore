@@ -420,3 +420,10 @@ FodyWeavers.xsd
 *.msm
 *.msp
 /client/build/
+
+# Package Lock
+/package-lock.json
+
+# Coverage report files
+/coverage
+/client/package-lock.json
