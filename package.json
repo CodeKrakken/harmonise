@@ -13,7 +13,6 @@
     "lint:fix": "eslint --fix 'client/src/**/*.{ts,tsx,js,jsx}' 'server/**/*.{ts,js}'",
     "format": "prettier --write 'client/src/**/*.{ts,tsx,js,jsx}' 'server/**/*.{ts,js,json,css,scss,md}'",
     "format:watch": "chokidar 'client/src/**/*.{ts,tsx,js,jsx}' 'server/**/*.{ts,js,json,css,scss,md}' -c 'prettier --write \"client/src/**/*.{ts,tsx,js,jsx}\" \"server/**/*.{ts,js,json,css,scss,md}\"'",
-    "setup": "npm install eslint prettier eslint-config-prettier eslint-plugin-prettier @typescript-eslint/parser @typescript-eslint/eslint-plugin jest @types/jest ts-jest jest-environment-jsdom chokidar-cli --save-dev && npm run watch-all",
     "watch-all": "npm-run-all --parallel lint:watch test:watch",
     "lint:watch": "chokidar 'client/src/**/*.{ts,tsx,js,jsx}' 'server/**/*.{ts,js}' -c 'eslint --fix \"{path}\" || true'",
     "test:watch": "jest --watch --coverage"
