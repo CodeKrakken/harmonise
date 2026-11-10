@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "build": "echo \"Woulda built but didn't\" && exit 0",
     "run": "echo \"Woulda run but didn't\" && exit 0",
